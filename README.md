@@ -1,0 +1,2 @@
+Por: Sabrina Depaz
+La idea es crear una página web educativa sobre aspectos aprendidos en el curso de arquitectura en comunicación visual. Incluirá cuestionarios y a la vez servirá como portfolio digital como artista personal.
