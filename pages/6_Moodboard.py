@@ -22,7 +22,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image("assets/mooodboard.png", width=1500)
+st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/mooodboard.png", width=1500)
 
 ASSETS_DIR = Path("assets")
 
@@ -58,24 +58,24 @@ def scan_images():
 # Diccionarios de imágenes 
 
 tipo_images_map = {
-    "Vivienda familiar": ["viviendafamiliar1.jpg", "viviendafamiliar22.jpg"],
-    "Diseño interior": ["reciclado1.jpg", "reciclado2.jpg"],
-    "Intervención urbana": ["urbano1.jpg", "urbano2.jpg"]
+    "Vivienda familiar": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar2.jpg"],
+    "Diseño interior": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado2.jpg"],
+    "Intervención urbana": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano2.jpg"]
 }
 
 estilo_images_map = {
-    "Minimalista": ["minimalista1.jpg", "minimalista2.jpg"],
-    "Industrial": ["industrial1.jpg", "industrial2.jpg"],
-    "Clásico": ["clasico1.jpg", "clasico2.jpg"],
-    "Orgánico": ["organico1.jpg", "organico2.jpg"],
-    "Vanguardista": ["vanguardista1.jpg", "vanguardista2.jpg"]
+    "Minimalista": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista2.jpg"],
+    "Industrial": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial2.jpg"],
+    "Clásico": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico2.jpg"],
+    "Orgánico": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico2.jpg"],
+    "Vanguardista": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista2.jpg"]
 }
 
 elemento_images_map = {
-    "Iluminación natural": ["iluminación1.jpg","iluminación2.jpg"],
-    "Materiales reciclados": ["panel1.jpg","panel2.jpg"],
-    "Espacios multifuncionales": ["multifuncional1.jpg","multifuncional2.jpg"],
-    "Jardín / Vegetación": ["planta1.jpg","planta2.jpg"],
+    "Iluminación natural": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n2.jpg"],
+    "Materiales reciclados": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel2.jpg"],
+    "Espacios multifuncionales": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional2.jpg"],
+    "Jardín / Vegetación": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta2.jpg"],
 }
 
 # -------------------------

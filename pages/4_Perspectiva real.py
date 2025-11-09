@@ -1,7 +1,7 @@
 import streamlit as st
 col1, col2, col3 = st.columns([1,2,1])  
 with col2:
-    st.image("assets/5.jpg", width=1500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/5.jpg", width=1500)
 # ---------- ESTILOS UNIVERSALES ----------
 st.markdown(
     """
@@ -79,12 +79,12 @@ st.markdown("""
 5. Unir los puntos resultantes para representar la intersección en la perspectiva.
 """)
 with col2:
-    st.image("assets/real1.jpeg", width=500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real1.jpeg", width=500)
 
 
 col1, col2 = st.columns(2)
 with col1:
-    st.image("assets/real2.jpeg", width=500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real2.jpeg", width=500)
 with col2:
     st.markdown("""
     ### Procedimiento de las prolongaciones
@@ -139,14 +139,14 @@ st.markdown("""
 """)
 
 with col2:
-    st.image("assets/real3.jpeg", width=500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real3.jpeg", width=500)
 
 
-st.image("assets/real4.jpeg", width=1000)
+st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real4.jpeg", width=1000)
 
 
-st.image("assets/real5.jpeg", width=1000)
+st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real5.jpeg", width=1000)
 
-st.image("assets/real6.jpeg", width=1000)
+st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/real6.jpeg", width=1000)
 
 

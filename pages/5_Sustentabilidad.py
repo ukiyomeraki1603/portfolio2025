@@ -1,7 +1,7 @@
 import streamlit as st
 col1, col2, col3 = st.columns([1,2,1])  
 with col2:
-    st.image("assets/6.jpg", width=1500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/6.jpg", width=1500)
 # ---------- ESTILOS UNIVERSALES ----------
 st.markdown(
     """
@@ -34,7 +34,7 @@ st.text("    ")
 
 
 
-st.image("assets/lucernaposter.png", width=1500)
+st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/Lucerna%20poster.png", width=1500)
 
 st.text("Realizamos una maqueta de estudio con cartón sueco, acetato, y nuestro querido amigo UHU. Su escala es 1:50 y mide 9cm de alto, con una planta de 18cm por 11cm.")
 
