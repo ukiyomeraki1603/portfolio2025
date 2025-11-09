@@ -34,7 +34,7 @@ st.text( "La primera actividad del año fue en grupos, y consistió en la evalua
 
 
 
-# ----- Primera fila: texto izquierda, imagen derecha -----
+
 col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
@@ -45,7 +45,7 @@ with col1:
 with col2:
     st.image("assets/proy1-4.jpeg", width=500)
 
-# ----- Segunda fila: imagen izquierda, texto derecha -----
+
 col1, col2 = st.columns(2)
 with col1:
     st.image("assets/proy1-1.jpeg", width=500)
@@ -55,7 +55,6 @@ with col2:
     """)
    
 
-# ----- Tercera fila: texto izquierda, imagen derecha -----
 col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
@@ -112,11 +111,11 @@ with col2:
    Una vez realizado el modelo 3D, renderizamos el modelo con Gendo Ai.
     """)
 
-    # ----- Texto final -----
+   
 st.markdown(
     """
     ## Conclusiones  
-    Para finalizar el proceso, creamos un póster y un video del modelado digital.
+    Para finalizar el proceso, creamos un póster digital.
     """
 )
 
@@ -124,9 +123,5 @@ col1, col2, col3 = st.columns([1,2,1])
 with col2:
     st.image("assets/proy1poster.jpeg")
 
-# ----- Video local -----
 
-col1, col2, col3 = st.columns([1,2,1])  
-with col2:
-    with open("assets.vid/proy1video.mp4", "rb") as video_file:
-        st.video(video_file.read())
+

@@ -38,14 +38,12 @@ st.image("assets/lucernaposter.png", width=1500)
 
 st.text("Realizamos una maqueta de estudio con cartón sueco, acetato, y nuestro querido amigo UHU. Su escala es 1:50 y mide 9cm de alto, con una planta de 18cm por 11cm.")
 
-with open("assets.vid/maqueta.mp4", "rb") as video_file:
-    st.video(video_file.read())
+st.video("https://youtu.be/wwpL3INTLW4")
 
 st.text("Dado que contábamos con un vasto terreno, decidimos agregar no solo un parrillero y cochera, sino una huerta y jardín organizado pensado para la sustentabilidad y para recibir visitas.")
 st.text("También creamos un video renderizando el modelado de SketchUp en Twinmotion.")
 
-with open("assets.vid/sust.mp4", "rb") as video_file:
-    st.video(video_file.read())
+st.video("https://youtu.be/uciuEnWwtvg")
 
 st.text("Para más detalles, descargue la memoria descriptiva del proyecto:")
 with open("assetspdf/memoria2025.pdf", "rb") as f:

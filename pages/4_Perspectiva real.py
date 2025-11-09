@@ -69,7 +69,7 @@ st.markdown("""
 - **Planos visuales:** Planos auxiliares que permiten ubicar los puntos de intersección entre elementos y trasladarlos correctamente a la perspectiva real.
 """)
 
-# Procedimiento
+
 st.header("Procedimiento")
 st.markdown("""
 1. Identificar los elementos que se intersectan.  
@@ -81,7 +81,7 @@ st.markdown("""
 with col2:
     st.image("assets/real1.jpeg", width=500)
 
-# ----- Segunda fila: imagen izquierda, texto derecha -----
+
 col1, col2 = st.columns(2)
 with col1:
     st.image("assets/real2.jpeg", width=500)
@@ -92,7 +92,7 @@ with col2:
 El procedimiento de las prolongaciones es una técnica utilizada para trasladar medidas y puntos desde las vistas ortogonales (planta, alzado o perfil) hacia la perspectiva real, manteniendo la proporción, escala y profundidad correctas.
 """)
 
-# Conceptos clave
+
 st.header("Conceptos clave")
 st.markdown("""
 - **Prolongaciones:** Líneas auxiliares trazadas desde los vértices del objeto hacia el plano de perspectiva para ubicar los puntos en la vista en perspectiva.  
@@ -100,7 +100,7 @@ st.markdown("""
 - **Líneas de referencia:** Ayudan a trasladar medidas y ubicar correctamente alturas, anchos y profundidades, respetando la proporción real.
 """)
 
-# Procedimiento paso a paso
+
 st.header("Procedimiento")
 st.markdown("""
 1. Identificar los vértices del objeto en las vistas ortogonales (planta y alzado).  
@@ -111,7 +111,7 @@ st.markdown("""
 6. Revisar que las proporciones y la convergencia de líneas sean coherentes, ajustando si es necesario.
 """)
 
-# ----- Tercera fila: texto izquierda, imagen derecha -----
+
 col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
@@ -120,7 +120,6 @@ Los planos visuales son herramientas fundamentales para proyectar correctamente 
 Un plano visual es una superficie imaginaria que se coloca entre el observador y el objeto, y sirve para determinar cómo se verá cada punto del objeto en la representación en perspectiva.
 """)
 
-# Conceptos clave
 st.header("Conceptos clave")
 st.markdown("""
 - **Plano Visual Vertical (PVV):** Plano que se coloca frente al observador, perpendicular a la línea de horizonte. Sobre él se proyectan los puntos para definir la profundidad.  
@@ -128,7 +127,7 @@ st.markdown("""
 - **Puntos de intersección:** Son los puntos donde las líneas de proyección cortan los planos visuales; definen la forma del objeto en perspectiva.
 """)
 
-# Procedimiento paso a paso
+
 st.header("Procedimiento")
 st.markdown("""
 1. Identificar las vistas ortogonales del objeto (planta, alzado o perfil).  

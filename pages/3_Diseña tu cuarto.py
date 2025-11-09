@@ -33,6 +33,5 @@ st.image("assets/shizuku2.jpg", width=1000)
 
 st.text("Por último, realicé un video recorriendo el modelo")
 
-with open("assets.vid/Shizukuvideo.mp4", "rb") as video_file:
-    st.video(video_file.read())
+st.video("https://youtu.be/Mxh4zZG4xHM")
 

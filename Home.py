@@ -87,23 +87,3 @@ with st.container():
         unsafe_allow_html=True
     )
 
-
-import streamlit as st
-
-st.markdown(
-    """
-    <style>
-    /* Aplica SOLO al contenido principal, no a la sidebar */
-    .main {
-        font-family: 'Georgia', serif !important;
-        font-size: 20px !important;
-        color: #000000 !important;
-    }
-
-    .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
-        font-family: 'Georgia', serif !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
