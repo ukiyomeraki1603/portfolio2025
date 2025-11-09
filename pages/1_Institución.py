@@ -4,13 +4,7 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    /* Fondo blanco y tipografía Georgia forzada en contenido principal */
-    .main .block-container {
-        background-color: #ffffff !important;
-        font-family: 'Georgia', serif !important;
-        color: #000000 !important; /* texto negro */
-    }
-
+  
     /* Sidebar marrón clarito y texto negro en Georgia */
     .stSidebar {
         background-color: #d8c3a5 !important; /* marrón clarito */
@@ -18,16 +12,6 @@ st.markdown(
         color: #000000 !important; /* texto negro */
     }
 
-    /* Forzar texto negro en widgets de sidebar */
-    .stSidebar .stTextInput input,
-    .stSidebar .stTextArea textarea,
-    .stSidebar .stSelectbox select,
-    .stSidebar .stSlider>div>div>div>input,
-    .stSidebar .stButton>button,
-    .stSidebar label {
-        color: #000000 !important;
-        font-family: 'Georgia', serif !important;
-    }
 
     /* Mantener tipografía por defecto en pestañas de navegación de páginas */
     [data-testid="stHorizontalBlock"] {
@@ -35,23 +19,114 @@ st.markdown(
     }
     
     
-
     </style>
     """,
     unsafe_allow_html=True
 )
 
 
+col1, col2, col3 = st.columns([1,2,1])  
+with col2:
+    st.image("assets/2.jpg", width=1500)
 
-st.title( "Este proyecto es sobre la institución")
+st.text( "La primera actividad del año fue en grupos, y consistió en la evaluación de un espacio de la institución educativa, su registro y reación de un elemento arquitectónico partiendo de la planta base. ")
 
+
+
+
+# ----- Primera fila: texto izquierda, imagen derecha -----
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("""
+    ### Primera fase
+    Registramos el entorno en el cual nos íbamos a basar y realizamos un croquis libre del mismo. Utilicé como recurso la línea y mancha, aplicando la técnica de acuarela y tinta sobre papel blanco.
+    """)
+    
+with col2:
+    st.image("assets/proy1-4.jpeg", width=500)
+
+# ----- Segunda fila: imagen izquierda, texto derecha -----
+col1, col2 = st.columns(2)
+with col1:
+    st.image("assets/proy1-1.jpeg", width=500)
+with col2:
+    st.markdown("""
+    Una vez seleccionada el área de estudio, realizamos un registro de su planta con medidas.
+    """)
+   
+
+# ----- Tercera fila: texto izquierda, imagen derecha -----
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("""
+    Realizamos un croquis del plano a escala. Utilicé como recurso la línea y apliqué la técnica de tinta sobre papel blanco.
+    """)
+with col2:
+    st.image("assets/proy1-2.jpeg", width=500)
+
+
+col1, col2 = st.columns(2)
+with col1:
+   st.image("assets/proy1-3.jpeg", width=500)
+with col2:
+    
+     st.markdown("""
+    Posteriormente, un corte de planta. Elegí aplicar mancha de marcadores y línea de fibras sobre papel blanco.
+    Opté por una paleta de tonos azules.
+    """)
+
+
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("""
+    ### Fase 2
+    Comenzamos la ideación de un elemento arquitectónico basándonos en la planta anteriormente estudiada. Este es uno de los croquis de ideación, donde se muestra al objeto visto en perspectiva a dos puntos de fuga.
+    """)
+with col2:
+    st.image("assets/proy1-5.jpeg", width=500)
+
+
+col1, col2 = st.columns(2)
+with col1:
+      st.image("assets/proy1-6.jpeg", width=500)
+with col2:
+    st.markdown("""
+    Aquí apreciamos sotro croquis con más detalle, reaizado en papel blanco, recurso línea y técnica fibra negra.
+    """)
+
+col1, col2 = st.columns(2)
+with col1:
+     st.markdown("""
+    Se representó la casa en perspectiva isométrica. (Debo aclarar que no disfruté el proceso de las veinticinco elipses en perspectiva).
+    """)
+with col2:
+   
+    st.image("assets/proy1-7.jpeg", width=500)
+
+
+col1, col2 = st.columns(2)
+with col1:
+   st.image("assets/proy1-8.jpeg", width=500)
+with col2:
+    st.markdown("""
+   Una vez realizado el modelo 3D, renderizamos el modelo con Gendo Ai.
+    """)
+
+    # ----- Texto final -----
 st.markdown(
     """
-    <style>
-    /* Forzar fondo blanco de la app */
-    .css-1d391kg {background-color: #ffffff !important;}
-    .css-18e3th9 {background-color: #ffffff !important;}
-    </style>
-    """,
-    unsafe_allow_html=True
+    ## Conclusiones  
+    Para finalizar el proceso, creamos un póster y un video del modelado digital.
+    """
 )
+
+col1, col2, col3 = st.columns([1,2,1])  
+with col2:
+    st.image("assets/proy1poster.jpeg")
+
+# ----- Video local -----
+
+col1, col2, col3 = st.columns([1,2,1])  
+with col2:
+    with open("assets.vid/proy1video.mp4", "rb") as video_file:
+        st.video(video_file.read())

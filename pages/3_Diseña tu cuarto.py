@@ -1,15 +1,12 @@
 import streamlit as st
+col1, col2, col3 = st.columns([1,2,1])  
+with col2:
+    st.image("assets/4.jpg", width=1500)
 
-# ---------- ESTILOS UNIVERSALES ----------
 st.markdown(
     """
     <style>
-    /* Fondo blanco y tipografía Georgia forzada en contenido principal */
-    .main .block-container {
-        background-color: #ffffff !important;
-        font-family: 'Georgia', serif !important;
-        color: #000000 !important; /* texto negro */
-    }
+   
 
     /* Sidebar marrón clarito y texto negro en Georgia */
     .stSidebar {
@@ -18,16 +15,7 @@ st.markdown(
         color: #000000 !important; /* texto negro */
     }
 
-    /* Forzar texto negro en widgets de sidebar */
-    .stSidebar .stTextInput input,
-    .stSidebar .stTextArea textarea,
-    .stSidebar .stSelectbox select,
-    .stSidebar .stSlider>div>div>div>input,
-    .stSidebar .stButton>button,
-    .stSidebar label {
-        color: #000000 !important;
-        font-family: 'Georgia', serif !important;
-    }
+    
 
     /* Mantener tipografía por defecto en pestañas de navegación de páginas */
     [data-testid="stHorizontalBlock"] {
@@ -37,3 +25,14 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.text("Esta actividad consistió de la creación, ideación y modelado de un espacio de descanso, uno de estudio y uno de ocio adaptado a las necesidades y gustos creativos de los participantes. En particular, elegí mezclar una estética de interior clásico con elementos de diseño japonés, como lo son las puertas corredizas (shōji). También elegí diseñar un jardín que acompañase la estética, fusionando elementos europeos con vegetación asiática. ")
+st.text("El modelado y los planos fueron creados con SketchUp y posteriormente renderizados con Twinmotion.")
+st.image("assets/shizuku1.jpg", width=1000)
+st.image("assets/shizuku2.jpg", width=1000)
+
+st.text("Por último, realicé un video recorriendo el modelo")
+
+with open("assets.vid/Shizukuvideo.mp4", "rb") as video_file:
+    st.video(video_file.read())
+

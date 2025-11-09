@@ -8,6 +8,8 @@ st.set_page_config(page_title="Presentación", layout="wide")
 st.markdown(
     """
     <style>
+
+
     /* Forzar fondo blanco y tipografía solo en contenido principal */
     .main .block-container {
         background-color: #ffffff !important;
@@ -28,20 +30,7 @@ st.markdown(
         font-family: inherit !important;
     }
 
-    /* Banner superior estilo art déco */
-    .banner {
-        background: linear-gradient(135deg, #d8c3a5, #c2b280);
-        padding: 50px;
-        text-align: center;
-        border-bottom: 6px solid #8a6f48;
-        letter-spacing: 4px;
-        font-size: 4rem;
-        font-weight: bold;
-        color: #ffffff;
-        text-transform: uppercase;
-        text-shadow: 2px 2px #5a4635;
-        border-radius: 0px 0px 15px 15px;
-    }
+   
 
     /* Panel de presentación */
     .panel {
@@ -70,36 +59,51 @@ st.markdown(
         color: #3b2f2f;
     }
 
-    <style>
-    /* Forzar fondo blanco y tipografía solo en contenido principal */
-    .main .block-container {
-        background-color: #ffffff !important;
-        font-family: 'Georgia', serif !important;
-        color: #3b2f2f !important;
-        padding-top: 0px;
-    }
-    </style>
+    
     """,
     unsafe_allow_html=True
 )
 
 # ---------- CONTENIDO ----------
-# Banner principal
-st.markdown("<div class='banner'>Presentación</div>", unsafe_allow_html=True)
 
 # Panel de texto (editable)
+# Imagen arriba del panel con tamaño más pequeño
+
+col1, col2, col3 = st.columns([1,2,1])  
+with col2:
+    st.image("assets/1.jpg", width=1500)
+
+
 with st.container():
     st.markdown(
         """
         <div class='panel'>
-            <h2>Título de tu presentación</h2>
+            <h2>Portfolio digital 2025</h2>
             <p>
-                Escribí aquí tu presentación. Podés contar quién sos, cuál es tu estilo artístico,
-                qué representa tu trabajo, o cualquier mensaje que quieras compartir con quienes visiten tu portfolio.
-                Este texto es completamente editable.
+                En este lugar expondré todos los trabajos realizados durante el curso de Comunicación Visual y Diseño dado para Sexto de Arquitectura, CTA.
             </p>
         </div>
         """,
         unsafe_allow_html=True
     )
 
+
+import streamlit as st
+
+st.markdown(
+    """
+    <style>
+    /* Aplica SOLO al contenido principal, no a la sidebar */
+    .main {
+        font-family: 'Georgia', serif !important;
+        font-size: 20px !important;
+        color: #000000 !important;
+    }
+
+    .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+        font-family: 'Georgia', serif !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
