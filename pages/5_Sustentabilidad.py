@@ -46,7 +46,7 @@ st.text("También creamos un video renderizando el modelado de SketchUp en Twinm
 st.video("https://youtu.be/uciuEnWwtvg")
 
 st.text("Para más detalles, descargue la memoria descriptiva del proyecto:")
-with open("assetspdf/memoria2025.pdf", "rb") as f:
+with open("file:///C:/Users/Usuario/Downloads/memoria2025%20(2).pdf", "rb") as f:
     st.download_button(
         label="Descargar PDF",
         data=f,
