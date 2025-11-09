@@ -44,9 +44,8 @@ st.text("Dado que contábamos con un vasto terreno, decidimos agregar no solo un
 st.text("También creamos un video renderizando el modelado de SketchUp en Twinmotion.")
 
 st.video("https://youtu.be/uciuEnWwtvg")
-import streamlit as st
-import requests
 
+st.text("Para más detalles, puede descargar la memoria descriptiva del proyecto presionando el siguiente botón:")
 
 
 pdf_url = "https://github.com/ukiyomeraki1603/portfolio2025/raw/main/docs/assetspdf/memoria2025.pdf"
