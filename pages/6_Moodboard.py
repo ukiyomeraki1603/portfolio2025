@@ -1,19 +1,18 @@
 
 import streamlit as st
-from pathlib import Path # para manejar archivos e imagenes 
+from pathlib import Path
 
-# diseño de la barra lateral
-
+# -------------------------
+# Estilos del sidebar
+# -------------------------
 st.markdown(
     """
     <style>
-    /* Sidebar marrón clarito y texto negro en Georgia */
     .stSidebar {
         background-color: #d8c3a5 !important;
         font-family: 'Georgia', serif !important;
         color: #000000 !important;
     }
-    /* Mantener tipografía por defecto en pestañas de navegación de páginas */
     [data-testid="stHorizontalBlock"] {
         font-family: inherit !important;
     }
@@ -22,13 +21,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Imagen principal (banner)
 st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/mooodboard.png", width=1500)
 
-ASSETS_DIR = Path("assets")
-
-
-# session_state guarda valores en la sesión
-
+# -------------------------
+# Inicialización de estados
+# -------------------------
 def init_state():
     if "notas" not in st.session_state:
         st.session_state.notas = []
@@ -45,51 +43,74 @@ def init_state():
     if "matched_auto" not in st.session_state:
         st.session_state.matched_auto = []
 
-# Escaneo de imágenes
+init_state()
 
-def scan_images():
-    imgs = []
-    if not ASSETS_DIR.exists():
-        return imgs
-    for ext in ("*.jpg", "*.jpeg", "*.png"):
-        imgs.extend(sorted(ASSETS_DIR.rglob(ext)))
-    return imgs
-
-# Diccionarios de imágenes 
-
+# -------------------------
+# Diccionarios de imágenes
+# -------------------------
 tipo_images_map = {
-    "Vivienda familiar": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar2.jpg"],
-    "Diseño interior": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado2.jpg"],
-    "Intervención urbana": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano2.jpg"]
+    "Vivienda familiar": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/viviendafamiliar2.jpg"
+    ],
+    "Diseño interior": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/reciclado2.jpg"
+    ],
+    "Intervención urbana": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/urbano2.jpg"
+    ]
 }
 
 estilo_images_map = {
-    "Minimalista": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista2.jpg"],
-    "Industrial": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial2.jpg"],
-    "Clásico": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico2.jpg"],
-    "Orgánico": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico2.jpg"],
-    "Vanguardista": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista1.jpg", "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista2.jpg"]
+    "Minimalista": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/minimalista2.jpg"
+    ],
+    "Industrial": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/industrial2.jpg"
+    ],
+    "Clásico": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/clasico2.jpg"
+    ],
+    "Orgánico": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/organico2.jpg"
+    ],
+    "Vanguardista": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/vanguardista2.jpg"
+    ]
 }
 
 elemento_images_map = {
-    "Iluminación natural": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n2.jpg"],
-    "Materiales reciclados": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel2.jpg"],
-    "Espacios multifuncionales": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional2.jpg"],
-    "Jardín / Vegetación": ["https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta1.jpg","https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta2.jpg"],
+    "Iluminación natural": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/iluminaci%C3%B3n2.jpg"
+    ],
+    "Materiales reciclados": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/panel2.jpg"
+    ],
+    "Espacios multifuncionales": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/multifuncional2.jpg"
+    ],
+    "Jardín / Vegetación": [
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta1.jpg",
+        "https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/planta2.jpg"
+    ],
 }
 
 # -------------------------
-# Inicialización
-# -------------------------
-init_state()
-all_images = scan_images()
-
-
 # Página principal
-
+# -------------------------
 st.write("Diseña tu propio moodboard con recomendaciones generales automáticamente")
 
-# 1) Datos básicos
+# Datos básicos
 st.subheader(" Datos del proyecto")
 col1, col2, col3 = st.columns([2,2,1])
 with col1:
@@ -102,20 +123,19 @@ with col3:
 
 st.session_state.current.update({"nombre": nombre, "tipo": tipo, "tam_m2": tam})
 
-# 2) Estilos
+# Estilos
 st.subheader(" Paleta conceptual y estilos")
 estilos = st.multiselect("Seleccioná uno o más estilos", options=list(estilo_images_map.keys()),
                          default=st.session_state.current.get("estilos", []))
 st.session_state.current["estilos"] = estilos
 
-# Tips condicionales
 for e in estilos:
     if e == "Industrial":
         st.info("Tip: combiná texturas rugosas (ladrillo, hormigón) con metales expuestos.")
     elif e == "Minimalista":
         st.info("Tip: priorizá espacios despejados y colores neutros.")
 
-# 3) Elementos
+# Elementos
 st.subheader(" Elementos y prioridades")
 elementos = st.multiselect("¿Qué elementos querés incluir?", options=list(elemento_images_map.keys()),
                            default=st.session_state.current.get("elementos", []))
@@ -124,40 +144,33 @@ st.session_state.current["elementos"] = elementos
 if "Eficiencia energética" in elementos:
     st.write("Considerá paneles solares, orientación y buen aislamiento.")
 
-
-# 4) Va generando automaticamente el moodboard (solo en sesión, no la muestra)
-
-
-
+# -------------------------
+# Generar moodboard automático
+# -------------------------
 auto_matched = []
 
 # Tipo
-for img_name in tipo_images_map.get(tipo, []):
-    p = ASSETS_DIR / img_name
-    if p.exists() and p not in auto_matched:
-        auto_matched.append(p)
+for img_url in tipo_images_map.get(tipo, []):
+    if img_url not in auto_matched:
+        auto_matched.append(img_url)
 
 # Estilos
 for e in estilos:
-    for img_name in estilo_images_map.get(e, []):
-        p = ASSETS_DIR / img_name
-        if p.exists() and p not in auto_matched:
-            auto_matched.append(p)
+    for img_url in estilo_images_map.get(e, []):
+        if img_url not in auto_matched:
+            auto_matched.append(img_url)
 
 # Elementos
 for el in elementos:
-    for img_name in elemento_images_map.get(el, []):
-        p = ASSETS_DIR / img_name
-        if p.exists() and p not in auto_matched:
-            auto_matched.append(p)
+    for img_url in elemento_images_map.get(el, []):
+        if img_url not in auto_matched:
+            auto_matched.append(img_url)
 
-st.session_state.matched_auto = [str(p) for p in auto_matched]
+st.session_state.matched_auto = auto_matched
 
-# No muestra las imágenes todavía
-
-
-#prepara el block de notas
-
+# -------------------------
+# Bloc de notas creativo
+# -------------------------
 st.subheader(" Bloc de notas creativo")
 nota_text = st.text_area("Escribí una idea, referencia o comentario", height=120)
 colb1, colb2 = st.columns([1,1])
@@ -179,7 +192,7 @@ if st.session_state.notas:
         st.markdown(f"**{i}.** {n}")
 
 # -------------------------
-# 8) Guardar / Exportar + Póster final
+# Guardar / Exportar + Póster final
 # -------------------------
 st.markdown("---")
 st.subheader(" Guardar / Exportar")
@@ -192,13 +205,12 @@ if st.button("Guardar moodboard en la sesión"):
         "estilos": st.session_state.current["estilos"],
         "elementos": st.session_state.current["elementos"],
         "notas": list(st.session_state.notas),
-        "imagenes": [Path(p).name for p in st.session_state.matched_auto],
+        "imagenes": list(st.session_state.matched_auto),
     }
     st.session_state.moodboards.append(mb)
     st.success(" Moodboard guardado correctamente en la sesión.")
 
-    # Mostrar póster  final
-
+    # Mostrar póster final
     st.markdown("---")
     st.markdown("##  Póster final del proyecto")
     st.markdown(
@@ -220,10 +232,8 @@ if st.button("Guardar moodboard en la sesión"):
     if mb["imagenes"]:
         st.markdown("###  Moodboard visual")
         cols = st.columns(3)
-        for i, img_name in enumerate(mb["imagenes"]):
-            img_path = ASSETS_DIR / img_name
-            if img_path.exists():
-                with cols[i % 3]:
-                    st.image(str(img_path), caption=img_name, use_container_width=True)
+        for i, img_url in enumerate(mb["imagenes"]):
+            with cols[i % 3]:
+                st.image(img_url, use_container_width=True)
     else:
         st.info("No se encontraron imágenes asociadas al moodboard.")
