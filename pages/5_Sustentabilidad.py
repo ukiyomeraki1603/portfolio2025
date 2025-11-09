@@ -44,12 +44,18 @@ st.text("Dado que contábamos con un vasto terreno, decidimos agregar no solo un
 st.text("También creamos un video renderizando el modelado de SketchUp en Twinmotion.")
 
 st.video("https://youtu.be/uciuEnWwtvg")
+import streamlit as st
+import requests
 
-st.text("Para más detalles, descargue la memoria descriptiva del proyecto:")
-with open("file:///C:/Users/Usuario/Downloads/memoria2025%20(2).pdf", "rb") as f:
-    st.download_button(
-        label="Descargar PDF",
-        data=f,
-        file_name="memoria2025.pdf",  
-        mime="application/pdf"
-    )
+
+
+pdf_url = "https://github.com/ukiyomeraki1603/portfolio2025/raw/main/docs/assetspdf/memoria2025.pdf"
+
+response = requests.get(pdf_url)
+st.download_button(
+    label="Descargar PDF",
+    data=response.content,
+    file_name="memoria2025.pdf",
+    mime="application/pdf"
+)
+
