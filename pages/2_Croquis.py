@@ -3,7 +3,7 @@ import streamlit as st
 # Imagen de portada centrada
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("assets/3.jpg", width=1500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/3.jpg", width=1500)
 
 st.text("En paralelo, se nos pidió que a lo largo de la primera mitad del año, realizaramos croquis de diferente estilo, para entregarlos en formato de libro. Yo elegí una encuadernación japonesa y forré las tapas utilizando la técnica de Decoupage.")
 st.text("Presione los botones para pasar página del libro de croquis.")
