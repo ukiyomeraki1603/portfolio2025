@@ -71,7 +71,7 @@ st.markdown(
 
 col1, col2, col3 = st.columns([1,2,1])  
 with col2:
-    st.image("assets/1.jpg", width=1500)
+    st.image("https://raw.githubusercontent.com/ukiyomeraki1603/portfolio2025/refs/heads/main/docs/assets/1.jpg", width=1500)
 
 
 with st.container():
