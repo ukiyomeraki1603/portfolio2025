@@ -46,6 +46,9 @@ st.text("También creamos un video renderizando el modelado de SketchUp en Twinm
 st.video("https://youtu.be/uciuEnWwtvg")
 
 st.text("Para más detalles, puede descargar la memoria descriptiva del proyecto presionando el siguiente botón:")
+import streamlit as st
+import requests
+
 
 
 pdf_url = "https://github.com/ukiyomeraki1603/portfolio2025/raw/main/docs/assetspdf/memoria2025.pdf"
